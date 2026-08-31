@@ -2,4 +2,11 @@
     <string name="app_name">Meu Aplicativo</string>
     <string name="txt_config">Configuração</string>
     <string name="txt_sobre">Sobre</string>
+    <string name="txt_addconfig">Item Configuração selecionado</string>
+    <string name="txt_addsobre">Item Sobre selecionado</string>
+    <string name="txt_adicionaP">Adicionar Pessoa</string>
+    <string name="txt_removeP">Remover Pessoa</string>
+    <string name="txt_listavaziaA">Digite um nome para adicionar.</string>
+    <string name="txt_listavaziaR">Adicione um nome para poder remover.</string>
+    <string name="txt_pessoanaoexiste">Esse nome não existe na lista.</string>
 </resources>

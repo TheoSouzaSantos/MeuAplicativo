@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -18,7 +18,42 @@
             android:layout_height="wrap_content"
             />
     </com.google.android.material.appbar.AppBarLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pessoa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/adicionarPessoa"
+            android:text="@string/txt_adicionaP"/>
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/removerPessoa"
+            android:text="@string/txt_removeP"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listaPessoas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 </LinearLayout>
 
 
