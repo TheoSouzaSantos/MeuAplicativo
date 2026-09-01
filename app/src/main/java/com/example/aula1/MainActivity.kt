@@ -23,7 +23,54 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        
+        val itens = mutableListOf<String>()
+
+        val listaPessoas = findViewById<ListView>(R.id.listaPessoas)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, itens)
+        listaPessoas.adapter = adapter
+
+        val pessoaescrita = findViewById<TextInputEditText>(R.id.pessoa)
+
+        val adicionarPessoa = findViewById<Button>(R.id.adicionarPessoa)
+        val removerPessoa = findViewById<Button>(R.id.removerPessoa)
+
+        adicionarPessoa.setOnClickListener {
+
+            val pessoa: String = pessoaescrita.text.toString()
+            if(itens.isEmpty() && pessoa.trim() == ""){
+
+            }
+            itens.add(pessoa.trim())
+            adapter.notifyDataSetChanged()
+            pessoaescrita.text?.clear()
+        }
+
+        removerPessoa.setOnClickListener {
+
+            val pessoa: String = pessoaescrita.text.toString()
+            if(itens.isNotEmpty()) {
+                if (pessoa.trim() != "") {
+                    if(itens.remove(pessoa.trim())){
+                        itens.remove(pessoa.trim())
+                    }else {
+                        Toast.makeText(
+                            this,
+                            R.string.txt_pessoanaoexiste,
+                            Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    itens.removeAt(itens.size - 1)
+                }
+            } else {
+                Toast.makeText(
+                    this,
+                    R.string.txt_listavaziaR,
+                    Toast.LENGTH_SHORT).show()
+            }
+            adapter.notifyDataSetChanged()
+            pessoaescrita.text?.clear()
+        }
+
 
     }
 
